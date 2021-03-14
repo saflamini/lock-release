@@ -1,15 +1,24 @@
-Immuatable Reminders/Messages Specifications
+Lock & Release
 
 Summary:
-Build an application that allows a user to create immutable reminders for themselves, then send that reminder to them at a time specified by the user.
+An application that allows a user to lock up funds until a specific time or event occurs.
 
-1) A user should be able to write their reminder into a wysiwig editor via web and/or mobile application.
--Needed: standard web dev stack for front end, web3.js to connect js actions to eth chain. This content should be written to the ethereum blockchain with a smart contract
-2) A user should be able to set a date and time at which they'd like to recieve their reminder.
--Needed: same as #1
-3) A user should receive an email and or text message with the content of their message to themselves, at the time that they specified.
-Needed: a function that makes a call to the smart contract that we've deployed, an email or text delivery mechanism or service (i.e. Twilio, sendgrid, etc.. to send our message)
+1) A user should be able to define how much value they wish to lock, and the conditions under which to unlock the money.
+Note: initial condidition options should be limited to date + time. Future options should include more customizable things like release upon going to location, release upon performing certain physical activity, release upon click of button, release upon weather, etc..
+2) This money should be sent to a smart contract, which should hold it until a specific event occurs.
+3) Once the money is released, the funds should be sent back to the user (or to someone that they wish to send $ to...this could work for securing services)
+4) The user and recipient should receive an email or text message indicating that their money is now available.
 
-In short - you are sending a message to your future self
--maybe consider secret code component
+Potential use cases:
+1) Forcing yourself to go to the gym. Only release funds when I go to xyz location.
+2) Forcing yourself to post on a blog or youtube channel. Only release the funds when a new post has been created.
+3) Forcing yourself to save money until a specific date or time.
+4) Creating an allowance for your kids that is programmatic
+5) Witholding money for services to be performed. 
 
+The Components
+1) Front end
+-html, js, css + web3 js setup that allows a user to provide input w a good interface
+2) Back end
+-smart contract that takes in value, and executes the lock + release 
+-use message API from Twilio and Sendgrid 
