@@ -1,0 +1,15 @@
+Immuatable Reminders/Messages Specifications
+
+Summary:
+Build an application that allows a user to create immutable reminders for themselves, then send that reminder to them at a time specified by the user.
+
+1) A user should be able to write their reminder into a wysiwig editor via web and/or mobile application.
+-Needed: standard web dev stack for front end, web3.js to connect js actions to eth chain. This content should be written to the ethereum blockchain with a smart contract
+2) A user should be able to set a date and time at which they'd like to recieve their reminder.
+-Needed: same as #1
+3) A user should receive an email and or text message with the content of their message to themselves, at the time that they specified.
+Needed: a function that makes a call to the smart contract that we've deployed, an email or text delivery mechanism or service (i.e. Twilio, sendgrid, etc.. to send our message)
+
+In short - you are sending a message to your future self
+-maybe consider secret code component
+
